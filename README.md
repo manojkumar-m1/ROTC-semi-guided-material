@@ -3,6 +3,10 @@
 
 ROTC is a 2-day hands-on, semi-guided workshop, with an additional four-hour ROTC assignment, where participants will explore Kubernetes and go deeper into its various components. This repository contains learning material for the workshop.
 
+## Contributors
+- Manoj Kumar Mariappan (manojkumar.m1@thoughtworks.com)
+- Ganesh Karande (ganesh.karande@thoughtworks.com)
+- Vidhi Agarwal (vidhi.agrawal@thoughtworks.com)
 
 [Final Assignment](https://github.com/twlabs/ROTC-semi-guided-material/tree/main/final_assignment)
 
