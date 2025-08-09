@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rotc-app-deployment
+  namespace: crud-app
+  labels:
+    app: my-app-rotc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app-rotc
+  template:
+    metadata:
+      labels:
+        app: my-app-rotc
+    spec:
+      containers:
+        - name: my-app-rotc
+          image: final_assignment-backend:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+          env:
+            - name: db_address
+              value: my-app-rotc-db
+            - name: db_username
+              value: postgres
+            - name: db_name
+              value: postgres
+            - name: db_password
+              valueFrom:
+                secretKeyRef:
+                  name: rotc-my-db-secret
+                  key: POSTGRES_PWD_IN_SECRET

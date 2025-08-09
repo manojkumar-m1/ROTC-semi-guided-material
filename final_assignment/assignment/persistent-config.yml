@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: rotc-pv
+  namespace: crud-app
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 4Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /Users/manojkumar.m1thoughtworks.com/tw/learning/rotc/code/mydbdump
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rotc-pvc
+  namespace: crud-app
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 4Gi
